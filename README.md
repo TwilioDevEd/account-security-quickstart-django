@@ -1,4 +1,7 @@
-![Twilio Logo](./twilio_logo_red.png)
+<a href="https://www.twilio.com">
+  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
+</a>
+
 # Twilio Account Security Quickstart - Two-Factor Authentication and Phone Verification
 
 A simple Python and Django implementation of a website that uses Twilio Account Security services to protect all assets within a folder. Additionally, it shows a Phone Verification implementation.
