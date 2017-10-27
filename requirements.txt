@@ -1,0 +1,4 @@
+authy==2.1.5
+Django==1.11.6
+phonenumbers==8.8.4
+python-dotenv==0.7.1

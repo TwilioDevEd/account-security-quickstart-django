@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row centered-form">
+  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Protected by Twilio Account Security</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <p>
+              Congrats! You have successfully implemented Twilio Two-Factor Authentication. Browse the links below for more information related to Twilio Account Security.
+            </p>
+            
+            <ul>
+                <li><a href="https://www.twilio.com/authy">Authy Info</a></li>
+                <li><a href="https://github.com/AuthySE/Authy-API-Samples">Command Line Examples</a></li>
+                <li><a href="https://github.com/AuthySE/Authy-API-Samples/tree/master/postman">Authy Postman Collection</a></li>
+                <li><a href="https://github.com/Authy/authy-form-helpers">Authy Form Helpers</a></li>
+                <li><a href="https://github.com/TwilioDevEd/account-security-quickstart-django">Quickstart Repository</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <a href="{% url 'logout' %}" class="btn btn-info btn-block">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

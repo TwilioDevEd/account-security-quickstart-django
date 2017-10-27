@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row centered-form">
+  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Account Security Demo Login</h3>
+      </div>
+      <div class="panel-body">
+        <form role="form" method="POST">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          {{ form.username.errors }}
+          {{ form.password.errors }}
+          
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <input type="text" name="username" maxlength="254" required="" id="id_username"
+                  class="form-control input-sm" placeholder="User Name">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <input type="password" name="password" required="" id="id_password"
+                  class="form-control input-sm" placeholder="Password">
+              </div>
+            </div>
+          </div>
+
+          <input type="submit" value="Login" class="btn btn-info btn-block">
+          <small style="float: right;"><a href="{% url 'register' %}">Not registered?</a></small>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
