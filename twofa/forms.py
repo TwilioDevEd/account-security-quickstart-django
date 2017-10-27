@@ -20,12 +20,12 @@ class BootstrapInput(forms.TextInput):
         })
 
     def bootwrap_input(self, input_tag):
-        size_classes = 'col-xs-{col} col-sm-{col} col-md-{col}'.format(col=self.size)
+        classes = 'col-xs-{n} col-sm-{n} col-md-{n}'.format(n=self.size)
 
-        return '''<div class="{size}">
+        return '''<div class="{classes}">
                     <div class="form-group">{input_tag}</div>
                   </div>
-               '''.format(size=size_classes, input_tag=input_tag)
+               '''.format(classes=classes, input_tag=input_tag)
 
     def render(self, *args, **kwargs):
         input_tag = super(BootstrapInput, self).render(*args, **kwargs)
@@ -47,9 +47,12 @@ class RegistrationForm(forms.ModelForm):
             'password': BootstrapPasswordInput('Password', size=6),
         }
 
-    country_code = forms.CharField(widget=BootstrapInput('Country Code', size=6))
-    phone_number = forms.CharField(widget=BootstrapInput('Phone Number', size=6))
-    confirm_password = forms.CharField(widget=BootstrapPasswordInput('Confirm Password', size=6))
+    country_code = forms.CharField(
+        widget=BootstrapInput('Country Code', size=6))
+    phone_number = forms.CharField(
+        widget=BootstrapInput('Phone Number', size=6))
+    confirm_password = forms.CharField(
+        widget=BootstrapPasswordInput('Confirm Password', size=6))
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -64,9 +67,14 @@ class RegistrationForm(forms.ModelForm):
         return country_code
 
     def clean(self):
-        if self.cleaned_data['password'] != self.cleaned_data['confirm_password']:
-            self.add_error('password', 'Password and confirmation did not match')
-        phone_number = self.cleaned_data['country_code'] + self.cleaned_data['phone_number']
+        data = self.cleaned_data
+        if data['password'] != data['confirm_password']:
+            self.add_error(
+                'password',
+                'Password and confirmation did not match'
+            )
+
+        phone_number = data['country_code'] + data['phone_number']
         try:
             phone_number = phonenumbers.parse(phone_number, None)
             if not phonenumbers.is_valid_number(phone_number):

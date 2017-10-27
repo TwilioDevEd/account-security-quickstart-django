@@ -1,0 +1,19 @@
+-   repo: git@github.com:pre-commit/pre-commit-hooks
+    sha: e718847ccbc65cd72a89fefb4db61c55ec4d430d
+    hooks:
+    -   id: trailing-whitespace
+        exclude: \.html$
+    -   id: end-of-file-fixer
+        exclude: \.html$
+    -   id: autopep8-wrapper
+        args: ['-i', '--ignore=E309,E501']
+    -   id: check-json
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: requirements-txt-fixer
+    -   id: flake8
+        exclude: >
+            (?x)^(
+                .*\/migrations\/.*|
+                account_security/settings.py
+            )$

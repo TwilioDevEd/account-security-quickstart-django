@@ -1,8 +1,6 @@
-import json
-
 from authy.api import AuthyApiClient
 from django.conf import settings
-from django.contrib.auth import login, logout
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -36,7 +34,10 @@ def register(request):
                 return redirect('2fa')
             else:
                 for key, value in authy_user.errors():
-                    form.add_error(None, '{key}: {value}'.format(key=key, value=value))
+                    form.add_error(
+                        None,
+                        '{key}: {value}'.format(key=key, value=value)
+                    )
     else:
         form = RegistrationForm()
     return render(request, 'register.html', {'form': form})
@@ -110,7 +111,7 @@ def onetouch_status(request):
             status=200
         )
     else:
-        return HttpResponse(status_response.errros(), status=503)
+        return HttpResponse(approval_status.errros(), status=503)
 
 
 @twofa_required
