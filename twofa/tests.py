@@ -113,3 +113,57 @@ class TwoFATestCase(TestCase):
             {'force': True}
         )
         request_sms_response.ok.assert_called_once()
+
+    @patch('twofa.views.authy_api')
+    def test_token_voice_success(self, authy_api):
+        # Arrange
+        TwoFAUser.objects.create_user(
+            username='test',
+            authy_id='fake',
+            password='test'
+        )
+        client = Client()
+        client.login(username='test', password='test')
+
+        request_call_response = MagicMock()
+        request_call_response.ok.return_value = True
+        authy_api.users.request_call.return_value = request_call_response
+
+        # Act
+        response = client.post('/token/voice')
+
+        # Assert
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.resolver_match.func, views.token_voice)
+        authy_api.users.request_call.assert_called_once_with(
+            'fake',
+            {'force': True}
+        )
+        request_call_response.ok.assert_called_once()
+
+    @patch('twofa.views.authy_api')
+    def test_token_voice_failure(self, authy_api):
+        # Arrange
+        TwoFAUser.objects.create_user(
+            username='test',
+            authy_id='fake',
+            password='test'
+        )
+        client = Client()
+        client.login(username='test', password='test')
+
+        request_call_response = MagicMock()
+        request_call_response.ok.return_value = False
+        authy_api.users.request_call.return_value = request_call_response
+
+        # Act
+        response = client.post('/token/voice')
+
+        # Assert
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.resolver_match.func, views.token_voice)
+        authy_api.users.request_call.assert_called_once_with(
+            'fake',
+            {'force': True}
+        )
+        request_call_response.ok.assert_called_once()
