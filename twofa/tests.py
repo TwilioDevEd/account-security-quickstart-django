@@ -1,6 +1,9 @@
 from django.conf import settings
 from django.test import TestCase, Client
-from unittest.mock import patch, MagicMock
+try:
+    from unittest.mock import patch, MagicMock
+except ImportError:
+    from mock import patch, MagicMock
 
 from . import views
 from .models import TwoFAUser

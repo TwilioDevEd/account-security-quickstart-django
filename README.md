@@ -4,6 +4,8 @@
 
 # Twilio Account Security Quickstart - Two-Factor Authentication and Phone Verification
 
+[![Build Status](https://travis-ci.org/TwilioDevEd/account-security-quickstart-django.svg?branch=master)](https://travis-ci.org/TwilioDevEd/account-security-quickstart-django)
+
 A simple Python and Django implementation of a website that uses Twilio Account Security services to protect all assets within a folder. Additionally, it shows a Phone Verification implementation.
 
 It uses four channels for delivery, SMS, Voice, Soft Tokens, and Push Notifications. You should have the [Authy App](https://authy.com/download/) installed to try Soft Token and Push Notification support.
