@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row centered-form">
+  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Phone Verification</h3>
+      </div>
+      <div class="panel-body">
+        <form role="form" method="POST">
+          {% csrf_token %}
+
+          {{ form.non_field_errors }}
+          {{ form.country_code.errors }}
+          {{ form.phone_number.errors }}
+          {{ form.via.errors }}
+
+          <div class="row">
+            {{ form.country_code }}
+            {{ form.phone_number }}
+            {{ form.via }}
+          </div>
+
+          <input type="submit" value="Request Verification" class="btn btn-info btn-block">
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
