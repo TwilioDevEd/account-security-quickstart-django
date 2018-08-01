@@ -1,4 +1,4 @@
-authy==2.1.5
+authy==2.2.1
 Django==1.11.6
 mock==2.0.0; python_version < '3'
 phonenumbers==8.8.4
