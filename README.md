@@ -27,6 +27,7 @@ It uses four channels for delivery: SMS, Voice, Soft Tokens, and Push Notificati
 - Setup an Account Security app via the [Twilio Console](https://twilio.com/console).
 - Grab an Application API key from the Dashboard and paste it in `.env.example`
 - Save the `.env.example` file as `.env`
+- source .env to add the environmental variables
 - Run `./manage.py runserver` from the cloned repo to run the app
 
 ### License
