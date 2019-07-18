@@ -1,5 +1,5 @@
-authy==2.2.1
-Django==1.11.6
+authy==2.2.3
+Django==2.2.3
 mock==2.0.0; python_version < '3'
-phonenumbers==8.8.4
-python-dotenv==0.7.1
+phonenumbers==8.10.15
+python-dotenv==0.10.3
