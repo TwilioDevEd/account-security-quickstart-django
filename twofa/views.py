@@ -33,7 +33,7 @@ def register(request):
                 login(request, twofa_user)
                 return redirect('2fa')
             else:
-                for key, value in authy_user.errors():
+                for key, value in authy_user.errors().items():
                     form.add_error(
                         None,
                         '{key}: {value}'.format(key=key, value=value)
