@@ -22,7 +22,7 @@ It uses four channels for delivery: SMS, Voice, Soft Tokens, and Push Notificati
 
 ### Setup
 - Clone this repo
-- Run `pip -r requirements.txt`
+- Run `pip install -r requirements.txt`
 - Register for a [Twilio Account](https://www.twilio.com/).
 - Setup an Account Security app via the [Twilio Console](https://twilio.com/console).
 - Grab an Application API key from the Dashboard and paste it in `.env.example`
