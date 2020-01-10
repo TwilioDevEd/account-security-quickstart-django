@@ -4,6 +4,8 @@
 
 # Twilio Account Security Quickstart - Two-Factor Authentication and Phone Verification
 
+> We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
+
 [![Build Status](https://travis-ci.org/TwilioDevEd/account-security-quickstart-django.svg?branch=master)](https://travis-ci.org/TwilioDevEd/account-security-quickstart-django)
 
 A simple Python and Django implementation of a website that uses Twilio Account Security services to protect all assets within a folder. Additionally, it shows a Phone Verification implementation.
