@@ -10,7 +10,7 @@ A simple Python and Django implementation of a website that uses Twilio Account 
 
 It uses four channels for delivery: SMS, Voice, Soft Tokens, and Push Notifications. You should have the [Authy App](https://authy.com/download/) installed to try Soft Token and Push Notification support.
 
-Learn more about Account Security and when to use the Authy API vs the Verify API in the [Account Security documentation])(https://www.twilio.com/docs/verify/authy-vs-verify).
+Learn more about Account Security and when to use the Authy API vs the Verify API in the [Account Security documentation](https://www.twilio.com/docs/verify/authy-vs-verify).
 
 
 #### Two-Factor Authentication Demo
