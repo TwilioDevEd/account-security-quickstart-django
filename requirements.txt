@@ -1,4 +1,4 @@
 authy==2.2.3
 Django==2.2.4
-phonenumbers==8.10.16
+phonenumbers==8.11.5
 python-dotenv==0.10.3
