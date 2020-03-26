@@ -6,7 +6,7 @@
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
 
-[![Build Status](https://travis-ci.org/TwilioDevEd/account-security-quickstart-django.svg?branch=master)](https://travis-ci.org/TwilioDevEd/account-security-quickstart-django)
+![](https://github.com/TwilioDevEd/account-security-quickstart-django/workflows/Django/badge.svg)
 
 A simple Python and Django implementation of a website that uses Twilio Account Security services to protect all assets within a folder. Additionally, it shows a Phone Verification implementation.
 
@@ -27,17 +27,19 @@ Learn more about Account Security and when to use the Authy API vs the Verify AP
 
 ### Setup
 - Clone this repo
+- Create and activate a new virtual environment for this project
 - Run `pip install -r requirements.txt`
 - Register for a [Twilio Account](https://www.twilio.com/).
 - Setup an Account Security app via the [Twilio Console](https://twilio.com/console).
 - Grab an Application API key from the Dashboard and paste it in `.env.example`
 - Save the `.env.example` file as `.env`
-- source .env to add the environmental variables
+- Run `./manage.py migrate` to apply migrations
 - Run `./manage.py runserver` from the cloned repo to run the app
 
 
 ## Meta
 
 * No warranty expressed or implied. Software is as is. Diggity.
+* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.
