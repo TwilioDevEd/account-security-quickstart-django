@@ -25,6 +25,11 @@ Learn more about Account Security and when to use the Authy API vs the Verify AP
 - Phone Verification
 - SMS or Voice Call
 
+### How to get an Authy API Key
+You will need to create a new Authy application in the [console](https://www.twilio.com/console/authy/). After you give it a name you can view the generated Account Security production API key. This is the string you will later need to set up in your environmental variables.
+
+![Get Authy API Key](api_key.png)
+
 ### Setup
 - Clone this repo
 - Create and activate a new virtual environment for this project
