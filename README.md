@@ -31,16 +31,48 @@ You will need to create a new Authy application in the [console](https://www.twi
 ![Get Authy API Key](api_key.png)
 
 ### Setup
-- Clone this repo
-- Create and activate a new virtual environment for this project
-- Run `pip install -r requirements.txt`
-- Register for a [Twilio Account](https://www.twilio.com/).
-- Setup an Account Security app via the [Twilio Console](https://twilio.com/console).
-- Grab an Application API key from the Dashboard and paste it in `.env.example`
-- Save the `.env.example` file as `.env`
-- Run `./manage.py migrate` to apply migrations
-- Run `./manage.py runserver` from the cloned repo to run the app
 
+This project only runs on Python 3.6+. In some environments when both version 2
+and 3 are installed, you may substitute the Python executables below with
+`python3` and `pip3` unless you use a version manager such as
+[pyenv](https://github.com/pyenv/pyenv).
+
+1. Clone this repo
+
+2. Create a new virtual environment:
+
+  * If using vanilla [virtualenv](https://virtualenv.pypa.io/en/latest/):
+
+    ```bash
+    virtualenv venv
+    source venv/bin/activate
+    ```
+
+  * If using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/):
+
+    ```bash
+    mkvirtualenv lead-alerts-flask
+
+3. Install the dependencies
+
+  ```
+  pip install -r requirements.txt
+  ```
+
+4. Register for a [Twilio Account](https://www.twilio.com/try-twilio).
+
+5. Setup an Account Security app via the [Twilio Console](https://www.twilio.com/console/authy).
+
+6. Grab an Application API key from the Dashboard and paste it in `.env.example`
+
+7. Copy and save the `.env.example` file as `.env`
+
+8. Run `./manage.py migrate` to apply migrations
+
+9. Run `./manage.py runserver` from the cloned repo to run the app
+
+10. The application should now be running on http://localhost:8000/, here you can
+register a new user account and proceed with a phone verification.
 
 ## Meta
 
