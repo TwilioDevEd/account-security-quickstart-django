@@ -76,13 +76,19 @@ Before we begin, we need to collect all the config values we need to run the app
 
    See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
 
-4. Start the development server. Before running the following command, make sure the virtual environment is activated.
+4. Run migrations.
+
+   ```bash
+   make serve-setup
+   ```
+
+5. Start the development server. Before running the following command, make sure the virtual environment is activated.
 
    ```bash
    make serve
    ```
 
-5. The application should now be running on http://localhost:8000/, here you can
+6. The application should now be running on http://localhost:8000/, here you can
 register a new user account and proceed with a phone verification.
 
 That's it!

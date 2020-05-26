@@ -16,9 +16,9 @@ else
 endif
 
 serve-setup:
+	. venv/bin/activate; \
 	./manage.py migrate;
 
-open-browser:
+serve:
+	. venv/bin/activate; \
 	./manage.py runserver;
-
-serve: serve-setup open-browser
