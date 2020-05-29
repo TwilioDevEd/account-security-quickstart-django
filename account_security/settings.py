@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'twofa',
     'phone_verification',
+    'clients'
 ]
 
 MIDDLEWARE = [

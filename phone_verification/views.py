@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from lib import twilio_client
+from clients import twilio_client
 from .forms import VerificationForm, TokenForm
 
 
