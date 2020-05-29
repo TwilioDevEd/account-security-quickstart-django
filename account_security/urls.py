@@ -22,5 +22,5 @@ urlpatterns = [
     path('verification/token/', verify_views.token_validation, name='token_validation'),  # noqa: E501
     path('verified/', verify_views.verified, name='verified'),
 
-    path('', twofa_views.protected, name='protected'),
+    path('', twofa_views.home, name='home'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

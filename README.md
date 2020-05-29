@@ -95,7 +95,7 @@ That's it!
 
 ### Tests
 
-You can run the tests locally by typing:
+You can run the tests locally by typing the following command, make sure the virtual environment is activated.
 
 ```bash
 python3 manage.py test

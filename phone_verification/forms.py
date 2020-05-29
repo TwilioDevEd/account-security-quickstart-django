@@ -26,23 +26,15 @@ class BootstrapSelect(forms.Select):
 
 
 class VerificationForm(forms.Form):
-    country_code = forms.CharField(
-        widget=BootstrapInput('Country Code', size=3))
     phone_number = forms.CharField(
-        widget=BootstrapInput('Phone Number', size=6))
+        widget=forms.HiddenInput())
     via = forms.ChoiceField(
         choices=[('sms', 'SMS'), ('call', 'Call')],
         widget=BootstrapSelect(size=3))
 
-    def clean_country_code(self):
-        country_code = self.cleaned_data['country_code']
-        if not country_code.startswith('+'):
-            country_code = '+' + country_code
-        return country_code
-
     def clean(self):
         data = self.cleaned_data
-        phone_number = data['country_code'] + data['phone_number']
+        phone_number = data['phone_number']
         try:
             phone_number = phonenumbers.parse(phone_number, None)
             if not phonenumbers.is_valid_number(phone_number):
