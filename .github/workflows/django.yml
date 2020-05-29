@@ -36,3 +36,8 @@ jobs:
     - name: Run Tests
       run: |
         python3 manage.py test
+      env:
+        env:
+        TWILIO_ACCOUNT_SID: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        TWILIO_AUTH_TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        TWILIO_VERIFICATION_SID: VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
