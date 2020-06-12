@@ -18,4 +18,4 @@ RUN make serve-setup
 
 EXPOSE 8000
 
-CMD ["make", "serve"]
+CMD ["sh", "-c", ". /usr/src/app/venv/bin/activate && make serve"]
