@@ -12,6 +12,8 @@ COPY Makefile ./
 
 RUN make install
 
+ENV PYTHONPATH="$PYTHONPATH:/usr/src/app/venv"
+
 COPY . .
 
 RUN make serve-setup
