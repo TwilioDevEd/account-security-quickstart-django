@@ -6,14 +6,12 @@ WORKDIR /usr/src/app
 
 COPY requirements.txt ./
 
-COPY Makefile ./
-
-RUN make install
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
-RUN make serve-setup
+RUN python3 manage.py migrate
 
 EXPOSE 8000
 
-CMD ["sh", "-c", ". /usr/src/app/venv/bin/activate && make serve"]
+CMD ["sh", "-c", "python3 manage.py runserver 0.0.0.0:8000"]
