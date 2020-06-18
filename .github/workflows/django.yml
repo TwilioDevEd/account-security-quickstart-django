@@ -9,11 +9,12 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform }}
     strategy:
       max-parallel: 4
       matrix:
         python-version: [3.6, 3.7, 3.8]
+        platform: [windows-latest, macos-latest, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -28,16 +29,8 @@ jobs:
         pip install coveralls
     - name: Set up project
       run: |
+        cp .env.example .env
         python3 manage.py migrate
-      env:
-        TWILIO_ACCOUNT_SID: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        TWILIO_AUTH_TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        TWILIO_VERIFICATION_SID: VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     - name: Run Tests
       run: |
         python3 manage.py test
-      env:
-        env:
-        TWILIO_ACCOUNT_SID: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        TWILIO_AUTH_TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        TWILIO_VERIFICATION_SID: VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
