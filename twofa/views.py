@@ -14,6 +14,10 @@ from .models import TwoFAUser
 authy_api = AuthyApiClient(settings.ACCOUNT_SECURITY_API_KEY)
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)

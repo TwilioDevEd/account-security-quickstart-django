@@ -1,11 +1,7 @@
-from authy.api import AuthyApiClient
-from django.conf import settings
 from django.shortcuts import render, redirect
 
+from clients import twilio_client
 from .forms import VerificationForm, TokenForm
-
-
-authy_api = AuthyApiClient(settings.ACCOUNT_SECURITY_API_KEY)
 
 
 def phone_verification(request):
@@ -13,12 +9,7 @@ def phone_verification(request):
         form = VerificationForm(request.POST)
         if form.is_valid():
             request.session['phone_number'] = form.cleaned_data['phone_number']
-            request.session['country_code'] = form.cleaned_data['country_code']
-            authy_api.phones.verification_start(
-                form.cleaned_data['phone_number'],
-                form.cleaned_data['country_code'],
-                via=form.cleaned_data['via']
-            )
+            verification = twilio_client.verifications(form.cleaned_data['phone_number'], form.cleaned_data['via'])
             return redirect('token_validation')
     else:
         form = VerificationForm()
@@ -29,12 +20,9 @@ def token_validation(request):
     if request.method == 'POST':
         form = TokenForm(request.POST)
         if form.is_valid():
-            verification = authy_api.phones.verification_check(
-                request.session['phone_number'],
-                request.session['country_code'],
-                form.cleaned_data['token']
-            )
-            if verification.ok():
+            verification = twilio_client.verification_checks(request.session['phone_number'], form.cleaned_data['token'])
+
+            if verification.status == 'approved':
                 request.session['is_verified'] = True
                 return redirect('verified')
             else:
