@@ -1,2 +1,2 @@
 flake8==3.7.9
-pre-commit==2.2.0
+pre-commit==2.9.2
