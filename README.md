@@ -58,8 +58,8 @@ Before we begin, we need to collect all the config values we need to run the app
 1. Clone this repo and `cd` into it.
 
    ```bash
-   git clone https://github.com/TwilioDevEd/account-security-quickstart-node.git
-   cd account-security-quickstart-node
+   git clone https://github.com/TwilioDevEd/account-security-quickstart-django.git
+   cd account-security-quickstart-django
    ```
 
 2. Create the virtual environment, load it and install dependencies.
