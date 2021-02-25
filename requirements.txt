@@ -2,4 +2,4 @@ authy==2.2.6
 Django==3.1.7
 phonenumbers==8.12.18
 python-dotenv==0.15.0
-twilio==6.52.0
+twilio==6.53.0
