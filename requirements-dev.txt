@@ -1,2 +1,2 @@
-flake8==3.9.1
+flake8==4.0.1
 pre-commit==2.12.1
