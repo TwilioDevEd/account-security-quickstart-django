@@ -3,3 +3,4 @@ Django==3.2
 phonenumbers==8.12.21
 python-dotenv==0.17.0
 twilio==6.57.0
+pyjwt>=2.4.0 # not directly required, pinned by Snyk to avoid a vulnerability
