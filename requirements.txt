@@ -1,5 +1,5 @@
 authy==2.2.6
 Django==3.2
-phonenumbers==8.12.21
+phonenumbers==8.12.49
 python-dotenv==0.17.0
 twilio==6.57.0
