@@ -1,5 +1,7 @@
 authy==2.2.6
-Django==3.2
+Django==4.2.14
 phonenumbers==8.12.21
 python-dotenv==0.17.0
 twilio==6.57.0
+sqlparse>=0.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
